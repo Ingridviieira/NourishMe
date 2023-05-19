@@ -29,8 +29,8 @@ public class DatabaseSeeder implements CommandLineRunner{
         motivoRepository.saveAll(List.of(m1,m2));
 
         refeicaoRepository.saveAll(List.of(
-            Refeicao.builder().nome("Clara").nomeRefeicao("Lanche da Tarde").motivo(m1).build(),
-            Refeicao.builder().nome("Julio").nomeRefeicao("Alomoço").motivo(m2).build()
+            Refeicao.builder().id(1l).nome("Clara").nomeRefeicao("Lanche da Tarde").motivo(new Motivo(m1.getId())).build(),
+            Refeicao.builder().id(2l).nome("Julio").nomeRefeicao("Alomoço").motivo(new Motivo(m2.getId())).build()
 
         ));
     

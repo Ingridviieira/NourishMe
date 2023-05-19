@@ -33,7 +33,6 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/refeicoes")
-
 public class RefeicaoController {
 
     Logger log = LoggerFactory.getLogger(RefeicaoController.class);

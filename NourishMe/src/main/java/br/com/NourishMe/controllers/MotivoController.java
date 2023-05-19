@@ -21,7 +21,7 @@ import br.com.NourishMe.repository.MotivoRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/motivos")
+@RequestMapping("api/v1/motivos")
 public class MotivoController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class MotivoController {
 
     @PostMapping
     public ResponseEntity<Motivo> create(
-        @RequestBody @Valid Motivo motivo, 
+        @RequestBody @Valid Motivo motivo,
         BindingResult result){
         repository.save(motivo);
         return ResponseEntity.status(HttpStatus.CREATED).body(motivo);
@@ -54,7 +54,7 @@ public class MotivoController {
 
     @PutMapping("{id}")
     public ResponseEntity<Motivo> update(
-        @PathVariable Long id, 
+        @PathVariable Long id,
         @RequestBody @Valid Motivo motivo
     ){
         getMotivo(id);

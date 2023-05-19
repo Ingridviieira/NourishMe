@@ -9,10 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Max;
-// import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,8 +25,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
-
 public class Refeicao {
 
     @Id
@@ -37,7 +34,7 @@ public class Refeicao {
     @NotEmpty(message = "O campo nome não pode ser vazio")
     private String nome; 
 
-    @NotBlank @Max( value= 20, message = "o campo precisa estar com o nome da refeição feita e não pode estar vazio, e com no maximo 20 letras")
+    @NotBlank @Size( max= 20, message = "o campo precisa estar com o nome da refeição feita e não pode estar vazio, e com no maximo 20 letras")
     private String nomeRefeicao; //nome da refeição ex café da manha
 
     // @NotEmpty(message = "O campo nome não pode ser vazio")

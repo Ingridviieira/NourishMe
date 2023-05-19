@@ -25,5 +25,7 @@ public class Motivo {
     @JsonProperty(access = Access.WRITE_ONLY, value = "descricaoMotivo")
     private String descricaoMotivo;
     
-    
+    public Motivo(Long id) {
+        this.id = id;
+    }
 }

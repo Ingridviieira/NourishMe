@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -32,12 +34,12 @@ public class Refeicao {
     private Long id;
 
     @NotEmpty(message = "O campo nome não pode ser vazio")
-    private String nome; 
+    private String nome;
 
-    @NotBlank @Size( max= 20, message = "o campo precisa estar com o nome da refeição feita e não pode estar vazio, e com no maximo 20 letras")
+    @NotBlank @Size( max= 100, message = "o campo precisa estar com o nome da refeição feita e não pode estar vazio, e com no maximo 20 letras")
     private String nomeRefeicao; //nome da refeição ex café da manha
 
-    // @NotEmpty(message = "O campo nome não pode ser vazio")
+    // @NotBlank @Size( max= 999, message = "O campo nome não pode ser vazio")
     // private String sentimentos; //o que sentiu depois que comeu
 
     // @Min(value = 0, message = "este campo o valor não pode ser inferior a 0")
@@ -48,7 +50,7 @@ public class Refeicao {
 
     public EntityModel<Refeicao> toEntityModel() {
         return EntityModel.of(
-            this, 
+            this,
             linkTo(methodOn(RefeicaoController.class).show(id)).withSelfRel(),
             linkTo(methodOn(RefeicaoController.class).destroy(id)).withRel("delete"),
             linkTo(methodOn(RefeicaoController.class).index(null, Pageable.unpaged())).withRel("all"),

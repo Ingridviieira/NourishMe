@@ -2,7 +2,7 @@
 
 
 ## Objetivo do projeto:
-Facilitar o processo de tratamento dos transtornos alimentares, o aplicativo irá monitorar as refeições que o usuario está fazendo, seja a quantidade  do que comeu e o que comeu.
+Facilitar o processo de tratamento dos transtornos alimentares, o aplicativo irá monitorar as refeições que o usuario está fazendo, seja a quantidade do que comeu e o que comeu.
 
 Vamos utilizar a API do GPT para criar um assistente emocional. Através dela, será possível integrar o modelo de linguagem natural do GPT em um aplicativo e desenvolver um assistente que possa conversar com usuários sobre seus sentimentos, problemas emocionais, estresse, ansiedade e outros temas relacionados à saúde mental. Além disso, o chat oferecerá sugestões, dicas e atividades que possam ajudar a pessoa a lidar melhor com suas emoções e sentimentos
 

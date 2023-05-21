@@ -53,17 +53,12 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 |-------|:-----------:|-------|-----------|
 
 |Nome|String|Sim|Texto com o nome da pessoa com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Café da manha|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Almoço|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Cafe da Tarde|String|Texto com o que comeu no café da tarde, com no máximo 300 caracteres|#
-|-------|:-----------:|-------|-----------|
 |Jantar|String|Sim|Texto com o que comeu na janta, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Motivacao|String|Não|Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
+
 ||||
 
 # Exemplo de corpo de requisição
@@ -87,17 +82,11 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 |-------|:-----------:|-------|-----------|
 
 |Nome|String|Sim|Texto com o nome da pessoa com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Café da manha|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Almoço|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Cafe da Tarde|String|Texto com o que comeu no café da tarde, com no máximo 300 caracteres|#
-|-------|:-----------:|-------|-----------|
 |Jantar|String|Sim|Texto com o que comeu na janta, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Motivacao|String|Não|Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 ||||
 
 # Exemplo de corpo de requisição
@@ -128,17 +117,11 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 |-------|:-----------:|-------|-----------|
 
 |Nome|String|Sim|Texto com o nome da pessoa com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Café da manha|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Almoço|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Cafe da Tarde|String|Texto com o que comeu no café da tarde, com no máximo 300 caracteres|#
-|-------|:-----------:|-------|-----------|
 |Jantar|String|Sim|Texto com o que comeu na janta, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Motivacao|String|Não|Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 ||||
 
 ```js
@@ -165,17 +148,11 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 |-------|:-----------:|-------|-----------|
 
 |Nome|String|Sim|Texto com o nome da pessoa com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Café da manha|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Almoço|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Cafe da Tarde|String|Texto com o que comeu no café da tarde, com no máximo 300 caracteres|#
-|-------|:-----------:|-------|-----------|
 |Jantar|String|Sim|Texto com o que comeu na janta, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 |Motivacao|String|Não|Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
-|-------|:-----------:|-------|-----------|
 ||||
 
 # Exemplo de corpo de requisição

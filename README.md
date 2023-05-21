@@ -10,10 +10,10 @@
 ---
 # Refeicao- api/v1/refeicoes
  
-- [Cadastrar refeição] (#cadastrar refeicao)
+- [Cadastrar refeição](#cadastrar refeicao)
 - [Cadastrar Motivo]
-- [Atualizar refeição] (#Atualizar refeição)
-- [Apagar refeição] (#Apagar refeição)
+- [Atualizar refeição](#Atualizar refeição)
+- [Apagar refeição](#Apagar refeição)
 - [Listar refeição]
 
 # Motivo/api/v1/motivo

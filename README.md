@@ -29,13 +29,17 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 **Exemplo de Entrada** 
 ```js
     {
- 	"Id": '1L',
+ 	"Id": '1',
  	"Nome": 'Clara',
  	"Café da manha": 'Pao com ovo',
  	"Almoço": 'Macarrao com feijao',
  	"Cafe da Tarde": 'Pao com manteiga e café',
- 	"Jantar": 'Arroz feijão e carne'
- 	"Sentimentos": 'Estou me sentido mal, pois não me alimentei bem hoje'
+ 	"Jantar": 'Arroz feijão e carne',
+ 	"Sentimentos":{
+        "id": 1,
+        "me sentindo": 'Estou me sentido mal, pois não me alimentei bem hoje'
+    }
+     
    }
 ```
 **Códigos da Resposta**
@@ -50,14 +54,10 @@ Facilitar o processo de tratamento dos transtornos alimentares e tornar a terapi
 
 **Campos da Requisição**
 | Campo | Tipo | Obrigatório | Descrição |
-|-------|:-----------:|-------|-----------|
-
-|Nome|String|Sim|Texto com o nome da pessoa com no máximo 300 caracteres|
-|Café da manha|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|Almoço|String|Sim|Texto com o que comeu no café da manhã, com no máximo 300 caracteres|
-|Cafe da Tarde|String|Texto com o que comeu no café da tarde, com no máximo 300 caracteres|#
-|Jantar|String|Sim|Texto com o que comeu na janta, com no máximo 300 caracteres|
-|Motivacao|String|Não|Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
+|-------|------|:-----------:|-----------|
+|Nome   |String|Sim          |Texto com o nome da pessoa com no máximo 300 caracteres
+|Refeição|String|Sim         |Texto com o que comeu no café da manhã, com no máximo 300 caracteres |
+|Motivacao|String|Não        |Texto contando o que sentiu após cada refeição, com no máximo 300 caracteres|
 
 ||||
 

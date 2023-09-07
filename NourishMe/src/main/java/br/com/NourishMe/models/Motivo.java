@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +24,7 @@ public class Motivo {
     @JsonProperty(access = Access.WRITE_ONLY, value = "descricaoMotivo")
     private String descricaoMotivo;
     
-    public Motivo(Long id) {
-        this.id = id;
-    }
+    // public Motivo(Long id) {
+    //     this.id = id;
+    // }
 }

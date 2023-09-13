@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @RestController
-@RequestMapping("api/v1/refeicoes")
+@RequestMapping("/api/v1/refeicoes")
 @Slf4j
 public class RefeicaoController {
 
@@ -77,12 +77,12 @@ public class RefeicaoController {
         ){
         log.info("Apagando Refeição: " + id);
         refeicaoRepository.delete(getRefeicao(id));
-        return ResponseEntity.noContent().build();  
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("{id}")
     public ResponseEntity<Refeicao> update(
-        @PathVariable Long id, 
+        @PathVariable Long id,
         @RequestBody @Valid Refeicao refeicao
         ){
         log.info("Editar a refeição: " + id);

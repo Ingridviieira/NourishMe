@@ -1,71 +1,87 @@
 package br.com.NourishMe.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.NourishMe.exception.RestNotFoundException;
 import br.com.NourishMe.models.Motivo;
 import br.com.NourishMe.repository.MotivoRepository;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("api/v1/motivos")
+@Slf4j
 public class MotivoController {
 
     @Autowired
-    MotivoRepository repository;
+    MotivoRepository motivoRepository;
 
+    @Autowired
+    PagedResourcesAssembler<Object> assembler;
+
+    
     @GetMapping
-    public List<Motivo> index(){
-        return repository.findAll();
+    public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @PageableDefault(size = 5) Pageable pageable) {
+        var motivo = (busca == null) ? 
+            motivoRepository.findAll(pageable): 
+            motivoRepository.findByDescricaoMotivoContaining(busca, pageable);
+
+        return assembler.toModel(motivo.map(Motivo::toEntityModel)); 
     }
 
-    @PostMapping
-    public ResponseEntity<Motivo> create(
-        @RequestBody @Valid Motivo motivo,
-        BindingResult result){
-        repository.save(motivo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(motivo);
+
+    public ResponseEntity<EntityModel<Motivo>> create(
+            @RequestBody @Valid Motivo motivo,
+            BindingResult result) {
+        log.info("cadastrando informação: " + motivo);
+        motivoRepository.save(motivo);
+        return ResponseEntity
+            .created(motivo.toEntityModel().getRequiredLink("self").toUri())
+            .body(motivo.toEntityModel());
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<Motivo> show(@PathVariable Long id){
-        
-        return ResponseEntity.ok(getMotivo(id));
+    public EntityModel<Motivo> show(@PathVariable Long id) {
+        log.info("buscando informação: " + id);
+        return getMotivo(id).toEntityModel();
     }
+
 
     @DeleteMapping("{id}")
     public ResponseEntity<Motivo> destroy(@PathVariable Long id){
-        repository.delete(getMotivo(id));
+        log.info("apagando informação: " + id);
+        motivoRepository.delete(getMotivo(id));
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Motivo> update(
-        @PathVariable Long id,
-        @RequestBody @Valid Motivo motivo
-    ){
+    public ResponseEntity<EntityModel<Motivo>> update(
+            @PathVariable Long id,
+            @RequestBody @Valid Motivo motivo) {
+        log.info("atualizando informação: " + id);
         getMotivo(id);
         motivo.setId(id);
-        repository.save(motivo);
-        return ResponseEntity.ok(motivo);
+        motivoRepository.save(motivo);
+        return ResponseEntity.ok(motivo.toEntityModel());
     }
 
     private Motivo getMotivo(Long id) {
-        return repository.findById(id).orElseThrow(
-            () -> new RestNotFoundException("Motivo não encontrado"));
+        return motivoRepository.findById(id)
+                .orElseThrow(() -> new RestNotFoundException("informação não encontrada"));
     }
 
 }

@@ -1,6 +1,5 @@
 package br.com.NourishMe.models;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.EntityModel;
 
 import br.com.NourishMe.controllers.RefeicaoController;
@@ -9,41 +8,34 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+import org.springframework.data.domain.Pageable;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "T_REFEICAO")
 public class Refeicao {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "O campo nome não pode ser vazio")
+    @NotBlank @Size(min = 5, max = 200, message = "deve ser a descrição completa")
     private String nome;
 
-    @NotBlank @Size( max= 100, message = "o campo precisa estar com o nome da refeição feita e não pode estar vazio, e com no maximo 20 letras")
+    @NotBlank @Size(min = 5, max = 1000, message = "deve ser a descrição completa")
     private String nomeRefeicao; //nome da refeição ex café da manha
-
-    // @NotBlank @Size( max= 999, message = "O campo nome não pode ser vazio")
-    // private String sentimentos; //o que sentiu depois que comeu
-
-    // @Min(value = 0, message = "este campo o valor não pode ser inferior a 0")
-    // private double valor;   //quantidade
 
     @ManyToOne
     private Motivo motivo;

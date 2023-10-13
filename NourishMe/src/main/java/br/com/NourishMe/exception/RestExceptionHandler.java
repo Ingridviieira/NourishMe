@@ -1,4 +1,4 @@
-package br.com.NourishMe.config;
+package br.com.NourishMe.exception;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.NourishMe.models.RestValidationError;
 import jakarta.validation.ConstraintViolationException;
 
 @RestControllerAdvice

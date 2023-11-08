@@ -1,5 +1,8 @@
 package br.com.NourishMe.models;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
+import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.EntityModel;
 
 import br.com.NourishMe.controllers.RefeicaoController;
@@ -9,16 +12,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
-
-import org.springframework.data.domain.Pageable;
-
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Data
@@ -31,7 +30,7 @@ public class Refeicao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank @Size(min = 5, max = 200, message = "deve ser a descrição completa")
+    @NotBlank @Size(min = 5, max = 200, message = "Digite o nome")
     private String nome;
 
     @NotBlank @Size(min = 5, max = 1000, message = "deve ser a descrição completa")

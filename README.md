@@ -25,6 +25,11 @@ Abra o arquivo e troque as credenciais no application.properties
 logo apoós rode a api
 
 ![Alt text](<print 2.png>)
+
+![Alt text](image.png)
+
+![Alt text](image-1.png)
+e assim ja pode rodar o front
 ------------------------
 
 ## Endpoints 

@@ -16,6 +16,17 @@ Vamos utilizar a API do GPT para criar um assistente emocional. Através dela, s
 
 ------------------------
 
+# Como Rodar 
+Clona o repositório
+
+Abra o arquivo e troque as credenciais no application.properties
+![Alt text](print1.png)
+
+logo apoós rode a api
+
+![Alt text](<print 2.png>)
+------------------------
+
 ## Endpoints 
 # Refeicao- api/v1/refeicoes
  
